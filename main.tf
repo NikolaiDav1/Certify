@@ -39,8 +39,18 @@ resource "yandex_compute_instance" "vm-1" {
     preemptible = true
   }
 
+  provisioner "remote-exec" {
+    inline = ["sudo dnf -y install python"]
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = "${file("~/.ssh/id_rsa")}"
+    }
+  }
+
   provisioner "local-exec" {
-    command = "sudo apt update && sudo apt install python3"
+    command = "ansible-playbook -u ubuntu -i '${self.public_ip},' --private-key '~/.ssh/id_rsa' provision.yml"
   }
 }
 
