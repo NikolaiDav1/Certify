@@ -40,7 +40,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   provisioner "local-exec" {
-    command = "apt update && apt install python3"
+    command = "sudo apt update && sudo apt install python3"
   }
 }
 
