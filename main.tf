@@ -38,6 +38,10 @@ resource "yandex_compute_instance" "vm-1" {
   scheduling_policy {
     preemptible = true
   }
+
+  provisioner "local-exec" {
+    command = "echo The server's IP address is ${self.private_ip}"
+  }
 }
 
 output "internal_ip_address_vm_1" {

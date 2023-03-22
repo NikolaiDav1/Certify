@@ -4,7 +4,7 @@ pipeline
 
   stages
     {
-    stage('Create vm')
+    stage('Create buildvm')
       {
       steps
         {
