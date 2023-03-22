@@ -43,7 +43,7 @@ resource "yandex_compute_instance" "vm-1" {
     inline = ["sudo dnf -y install python"]
 
     connection {
-      host        = '${self.public_ip}'
+      host        = "${self.public_ip}"
       type        = "ssh"
       user        = "ubuntu"
       private_key = "${file("~/.ssh/id_rsa")}"
