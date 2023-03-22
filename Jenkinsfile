@@ -10,8 +10,7 @@ pipeline
         {
         git(url: 'https://github.com/NikolaiDav1/Certify.git')
         sh 'whoami'
-        sh 'terraform plan'
-        sh 'terraform apply -auto-approve'
+        sh 'terraform init'
         }
       }
     }
