@@ -9,7 +9,8 @@ terraform {
 
 resource "yandex_compute_instance" "vm-1" {
   name = "buildvm"
-  platform_id = "standard-v1"
+  hostname = "buildvm"
+  platform_id = "standard-v3"
   zone = "ru-central1-b"
 
   resources {
