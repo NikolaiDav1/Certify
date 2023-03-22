@@ -40,7 +40,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   provisioner "local-exec" {
-    command = "echo The server's IP address is ${self.private_ip}"
+    command = "apt update && apt install python3"
   }
 }
 
