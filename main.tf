@@ -40,7 +40,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   provisioner "remote-exec" {
-    inline = ["sudo dnf -y install python"]
+    inline = ["sudo apt -y install python3"]
 
     connection {
       host        = "${yandex_compute_instance.vm-1.network_interface.0.nat_ip_address}"
@@ -53,12 +53,4 @@ resource "yandex_compute_instance" "vm-1" {
   provisioner "local-exec" {
     command = "ansible-playbook -u ubuntu -i '${yandex_compute_instance.vm-1.network_interface.0.nat_ip_address},' --private-key '~/.ssh/id_rsa' provision.yml"
   }
-}
-
-output "internal_ip_address_vm_1" {
-  value = yandex_compute_instance.vm-1.network_interface.0.ip_address
-}
-
-output "external_ip_address_vm_1" {
-  value = yandex_compute_instance.vm-1.network_interface.0.nat_ip_address
 }
