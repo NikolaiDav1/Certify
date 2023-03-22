@@ -33,6 +33,10 @@ resource "yandex_compute_instance" "vm-1" {
   metadata = {
     ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
   }
+
+  scheduling_policy {
+    preemptible = true
+  }
 }
 
 output "internal_ip_address_vm_1" {
