@@ -1,0 +1,9 @@
+- hosts: "all"
+  tasks:
+  - name: "Install git via apt"
+    apt:
+      - git
+      - default-jdk
+      - maven
+    state: "latest"
+    update_cache: true
