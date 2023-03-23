@@ -1,6 +1,9 @@
-- hosts: "all"
+- name: Build project
+  hosts: all
+  become: yes
+
   tasks:
-    name: "Install git via apt"
+  - name: "Install git via apt"
     apt:
       - git
       - default-jdk
