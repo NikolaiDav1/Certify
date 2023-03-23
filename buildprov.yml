@@ -1,12 +1,14 @@
-- name: Build project
+---
+- name: For build server
   hosts: all
   become: yes
 
   tasks:
-  - name: "Install git via apt"
+  - name: Ensure packages installed
     apt:
+      pkg:
       - git
       - default-jdk
       - maven
-    state: "latest"
-    update_cache: true
+      state: present
+      update_cache: true
