@@ -1,6 +1,6 @@
 - hosts: "all"
   tasks:
-  - name: "Install git via apt"
+    name: "Install git via apt"
     apt:
       - git
       - default-jdk
