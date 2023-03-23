@@ -16,7 +16,8 @@ pipeline
             terraform plan && \
             terraform apply -auto-approve && \
             terraform output -json ipaddress > ~/myhosts'
-        sh 'ansible-playbook -u ubuntu -i "~/myhosts"  --private-key "~/.ssh/id_rsa" buildprov.yml'
+        sh 'export ANSIBLE_HOST_KEY_CHECKING=False && \
+        ansible-playbook -u ubuntu -i "~/myhosts" --private-key "~/.ssh/id_rsa" buildprov.yml'
         }
       }
     }
