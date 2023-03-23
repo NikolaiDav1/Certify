@@ -15,8 +15,8 @@ pipeline
             export YC_FOLDER_ID=$(yc config get folder-id) && \
             terraform plan && \
             terraform apply -auto-approve && \
-            terraform output -json external_ip_address_vm_1 > ~/myhosts'
-        sh 'ansible-playbook -u ubuntu -i "~/myhosts"  --private-key "~/.ssh/id_rsa" buildprovision.yml'
+            terraform output -json ipaddress > ~/myhosts'
+        sh 'ansible-playbook -u ubuntu -i "~/myhosts"  --private-key "~/.ssh/id_rsa" buildprov.yml'
         }
       }
     }
