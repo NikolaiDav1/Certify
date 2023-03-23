@@ -25,8 +25,14 @@
     args:
      chdir: /tmp/calculator-servlet-example/
 
-  - name: get war from build to master
-    synchronize:
-      mode: pull
-      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-      dest: /tmp/
+  - name: Pull an image
+    community.docker.docker_image:
+    name: tomcat:9.0.72-jre11
+    source: pull
+    pull:
+
+  - name: Tag and push to docker hub
+    community.docker.docker_image:
+      name: tomcat:9.0.72-jre11
+      push: true
+      source: local
