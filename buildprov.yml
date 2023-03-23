@@ -27,9 +27,9 @@
 
   - name: Pull an image
     community.docker.docker_image:
-    name: tomcat:9.0.72-jre11
-    source: pull
-    pull:
+      name: tomcat:9.0.72-jre11
+      source: pull
+      pull:
 
   - name: Tag and push to docker hub
     community.docker.docker_image:
