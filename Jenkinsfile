@@ -15,7 +15,7 @@ pipeline
             export YC_FOLDER_ID=$(yc config get folder-id) && \
             terraform plan && \
             terraform apply -auto-approve && \
-            terraform output -json ipaddress > ~/myhosts'
+            terraform output ipaddress > ~/myhosts'
         sh 'export ANSIBLE_HOST_KEY_CHECKING=False && \
         ansible-playbook -u ubuntu -i "~/myhosts" --private-key "~/.ssh/id_rsa" buildprov.yml'
         }
