@@ -11,6 +11,7 @@
       - default-jdk
       - maven
       - docker.io
+      - ansible
       state: present
       update_cache: true
 
@@ -24,6 +25,9 @@
     command: mvn --batch-mode --quiet install
     args:
      chdir: /tmp/calculator-servlet-example/
+
+  - name: install docker provider
+    command: ansible-galaxy collection install community.docker
 
   - name: Pull an image
     community.docker.docker_image:
