@@ -12,3 +12,20 @@
       - maven
       state: present
       update_cache: true
+
+  - name: clone from github
+    git:
+      repo: https://github.com/miladhub/calculator-servlet-example
+      dest: /tmp/calculator-servlet-example/
+      clone: yes
+
+  - name: build app
+    command: mvn --batch-mode --quiet install
+    args:
+     chdir: /tmp/calculator-servlet-example/
+
+  - name: get war from build to master
+    synchronize:
+      mode: pull
+      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      dest: /tmp/
