@@ -36,4 +36,5 @@
         path: /tmp/calculator-servlet-example/target/
       name: certify
       tag: v1
+      push: true
       source: build
