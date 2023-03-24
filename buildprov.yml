@@ -30,17 +30,9 @@
     pip:
       name: docker
 
-  - name: Creating Dockerfile
-    copy:
-      dest: /tmp/calculator-servlet-example/target/Dockerfile
-      content: |
-        FROM: tomcat:9.0.72-jre11
-        ADD mycalcwebapp.war /usr/local/tomcat/webapps/
-
   - name: Build an image and push it to a private repo
     community.docker.docker_image:
       build:
         path: /tmp/calculator-servlet-example/target
       name: nikolaidav/certify:1.0
-      repository: nikolaidav/certify:1.0
       source: build
