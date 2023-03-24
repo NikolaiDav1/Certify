@@ -11,7 +11,6 @@
       - default-jdk
       - maven
       - docker.io
-      - ansible
       state: present
       update_cache: true
 
@@ -28,15 +27,3 @@
 
   - name: install docker provider
     command: ansible-galaxy collection install community.docker
-
-  - name: Pull an image
-    community.docker.docker_image:
-      name: tomcat:9.0.72-jre11
-      source: pull
-      pull:
-
-  - name: Tag and push to docker hub
-    community.docker.docker_image:
-      name: tomcat:9.0.72-jre11
-      push: true
-      source: local
