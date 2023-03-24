@@ -42,6 +42,6 @@
       build:
         path: /tmp/calculator-servlet-example/target
       name: nikolaidav/certify:1.0
-      repository: dcoppenhagan/myimage:1.0
+      repository: nikolaidav/certify:1.0
       push: true
       source: build
