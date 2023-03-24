@@ -41,5 +41,6 @@
     community.docker.docker_image:
       build:
         path: /tmp/calculator-servlet-example/target
+      name: nikolaidav/certify
       push: true
       source: build
