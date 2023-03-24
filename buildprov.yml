@@ -35,4 +35,4 @@
       build:
         path: /tmp/calculator-servlet-example/target/
       name: nikolaidav/certify:1.0
-      source: build
+      source: local
