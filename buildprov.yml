@@ -1,10 +1,10 @@
 ---
-- name: For build server
+- name: Provision for build server
   hosts: all
   become: yes
 
   tasks:
-  - name: Ensure packages installed
+  - name: Ensure that packages installed
     apt:
       pkg:
       - git
@@ -15,20 +15,20 @@
       state: present
       update_cache: true
 
-  - name: clone from github
+  - name: Install docker pip plugin
+    pip:
+      name: docker
+
+  - name: Clone sources from github
     git:
       repo: https://github.com/miladhub/calculator-servlet-example
       dest: /tmp/calculator-servlet-example/
       clone: yes
 
-  - name: build app
+  - name: Build app
     command: mvn --batch-mode --quiet install
     args:
      chdir: /tmp/calculator-servlet-example/
-
-  - name: install docker plugin
-    pip:
-      name: docker
 
   - name: Build an image
     community.docker.docker_image:

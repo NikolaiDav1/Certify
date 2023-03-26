@@ -1,0 +1,27 @@
+---
+    - name: Provision for prod server
+      hosts: all
+      become: yes
+    
+      tasks:
+      - name: Ensure that packages installed
+        apt:
+          pkg:
+          - docker.io
+          - python3-pip
+          state: present
+          update_cache: true
+
+      - name: Install docker pip plugin
+        pip:
+          name: docker
+
+      - name: Run image from Docker Hub
+        community.docker.docker_image:
+          build:
+            path: /tmp/calculator-servlet-example/target/
+          name: nikolaidav/certify
+          tag: v1
+          push: true
+          source: build
+    
