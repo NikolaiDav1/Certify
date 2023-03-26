@@ -32,7 +32,9 @@
      chdir: /tmp/calculator-servlet-example/
 
   - name: Copy Dockerfile to build
-    synchronize: src=~/Certify/Dockerfile dest=/tmp/calculator-servlet-example/target/
+    synchronize:
+      src: ~/Certify/Dockerfile
+      dest: /tmp/calculator-servlet-example/target/
 
   - name: Copy hubpassword.txt to build
     synchronize:
