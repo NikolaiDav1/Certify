@@ -19,7 +19,7 @@
       - name: Pull app image from Docker Hub
         community.docker.docker_image:
           name: nikolaidav/certify
-          tag: latest
+          tag: v1
           source: pull
     
       - name: Run app

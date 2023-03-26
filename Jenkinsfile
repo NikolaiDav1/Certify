@@ -18,7 +18,7 @@ pipeline
             export MYHOSTS=$(terraform output buildvmip), && \
             export ANSIBLE_HOST_KEY_CHECKING=False && \
             ansible-playbook -u ubuntu -i $MYHOSTS --private-key "~/.ssh/id_rsa" buildprov.yml && \
-            terraform destroy -target yandex_compute_instance.buildvm -auto-approve'
+//            terraform destroy -target yandex_compute_instance.buildvm -auto-approve'
         }
       }
 
