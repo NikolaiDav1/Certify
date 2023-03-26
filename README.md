@@ -77,5 +77,8 @@ Git - https://github.com/NikolaiDav1/Certify.git
 ```
 Нажимаем Build now
 
-9. Идем в браузере на <ip продакшн сервера>:8080/mycalcwebapp
+9. Идем в браузере на:
+```
+<ip продакшн сервера>:8080/mycalcwebapp
+```
 И убеждаемся в работоспособности приложения.
