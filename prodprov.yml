@@ -25,7 +25,7 @@
       - name: Run app
         community.docker.docker_container:
           name: mycalcwebapp
-          image: nikolaidav/certify
+          image: nikolaidav/certify:v1
           state: started
           detach: true
           ports:
