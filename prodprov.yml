@@ -26,11 +26,9 @@
     
       - name: Run app
         community.docker.docker_container:
-          name: mycalc
-          image: httpd
+          name: mycalcwebapp
+          image: nikolaidav/certify
           state: started
           detach: true
-          exposed_ports:
-            - 80
           ports:
-            - 8080:80
+            - 8080:8080
