@@ -48,6 +48,6 @@
       build:
         path: /tmp/calculator-servlet-example/target/
       name: nikolaidav/certify
-      tag: v1
+      tag: 1.0
       push: true
       source: build

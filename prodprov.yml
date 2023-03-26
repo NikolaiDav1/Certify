@@ -19,13 +19,13 @@
       - name: Pull app image from Docker Hub
         community.docker.docker_image:
           name: nikolaidav/certify
-          tag: v1
+          tag: 1.0
           source: pull
     
       - name: Run app
         community.docker.docker_container:
           name: mycalcwebapp
-          image: nikolaidav/certify:v1
+          image: nikolaidav/certify:1.0
           state: started
           detach: true
           ports:
