@@ -8,6 +8,7 @@
     apt:
       pkg:
       - git
+      - rsync
       - default-jdk
       - maven
       - docker.io
