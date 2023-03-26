@@ -38,7 +38,7 @@
   - name: Copy hubpassword.txt to build
     copy:
       src: ~/hubpassword.txt
-      dest: ~/
+      dest: /tmp/
 
   - name: Login to Docker Hub
     command: cat ~/hubpassword.txt | docker login --username nikolaidav --password-stdin
