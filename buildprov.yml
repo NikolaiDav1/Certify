@@ -33,12 +33,12 @@
 
   - name: Copy Dockerfile to build
     copy:
-      src: ~/Certify/Dockerfile
+      src: ./Dockerfile
       dest: /tmp/calculator-servlet-example/target/
 
   - name: Copy hubpassword.txt to build
     copy:
-      src: ~/hubpassword.txt
+      src: ./hubpassword.txt
       dest: /tmp/calculator-servlet-example/target/
 
   - name: Login to Docker Hub
