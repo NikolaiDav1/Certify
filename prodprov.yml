@@ -16,12 +16,21 @@
         pip:
           name: docker
 
-      - name: Run image from Docker Hub
+      - name: Pull app image from Docker Hub
         community.docker.docker_image:
           build:
             path: /tmp/calculator-servlet-example/target/
           name: nikolaidav/certify
-          tag: v1
-          push: true
-          source: build
+          tag: latest
+          source: pull
     
+      - name: Run app
+        community.docker.docker_container:
+          name: mycalc
+          image: httpd
+          state: started
+          detach: true
+          exposed_ports:
+            - 80
+          ports:
+            - 8080:80
