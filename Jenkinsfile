@@ -21,7 +21,7 @@ pipeline
             terraform destroy -target buildvm -auto-approve'
         }
       }
-    }
+
     stage('Prod')
       {
       steps
