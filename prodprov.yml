@@ -21,7 +21,7 @@
           build:
             path: /tmp/calculator-servlet-example/target/
           name: nikolaidav/certify
-          tag: latest
+          tag: v1
           source: pull
     
       - name: Run app
