@@ -31,12 +31,12 @@
      chdir: /tmp/calculator-servlet-example/
 
   - name: Copy Dockerfile to build
-    synchronize:
+    copy:
       src: ./Dockerfile
       dest: /tmp/calculator-servlet-example/target/
 
   - name: Copy hubpassword.txt to build
-    synchronize:
+    copy:
       src: ~/hubpassword.txt
       dest: /tmp/calculator-servlet-example/target/
 
