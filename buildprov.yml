@@ -41,7 +41,7 @@
       dest: /tmp/
 
   - name: Login to Docker Hub
-    command: cat /tmp/hubpassword.txt | docker login --username nikolaidav --password-stdin
+    command: cat /tmp/hubpassword.txt | sudo docker login --username nikolaidav --password-stdin
 
   - name: Build an image
     community.docker.docker_image:
