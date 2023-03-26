@@ -38,7 +38,6 @@
 
   - name: Copy hubpassword.txt to build
     synchronize:
-      mode: push
       src: ~/hubpassword.txt
       dest: /tmp/calculator-servlet-example/target/
 
