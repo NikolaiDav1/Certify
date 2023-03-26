@@ -8,7 +8,6 @@
     apt:
       pkg:
       - git
-      - rsync
       - default-jdk
       - maven
       - docker.io
@@ -32,13 +31,13 @@
      chdir: /tmp/calculator-servlet-example/
 
   - name: Copy Dockerfile to build
-    copy:
+    synchronize:
       src: ./Dockerfile
       dest: /tmp/calculator-servlet-example/target/
 
   - name: Copy hubpassword.txt to build
-    copy:
-      src: ./hubpassword.txt
+    synchronize:
+      src: ~/hubpassword.txt
       dest: /tmp/calculator-servlet-example/target/
 
   - name: Login to Docker Hub
